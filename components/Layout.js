@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-// import "../asset/main.css";
+import Navigation from "./Navigation";
 
 const Layout = (props) => {
   return (
     <Wrapper>
+      <Navigation />
       <main>{props.children}</main>
     </Wrapper>
   );

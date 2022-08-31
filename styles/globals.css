@@ -1,4 +1,13 @@
+@font-face {
+  font-family: PocketMonk;
+  src: url(../font/PocketMonk-15ze.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;700&family=Roboto:wght@100;300;400;700&display=swap");
+
 :root {
+  --clr-pokemon-1: rgb(255, 203, 5);
+  --clr-pokemon-2: rgb(42, 117, 187);
   --clr-primary-1: hsl(184, 91%, 17%);
   --clr-primary-2: hsl(185, 84%, 25%);
   --clr-primary-3: hsl(185, 81%, 29%);
@@ -26,6 +35,7 @@
   --clr-black: rgb(36, 33, 33);
   --ff-primary: "Oswald", sans-serif;
   --ff-secondary: "Roboto", sans-serif;
+  --ff-pokemon: "PocketMonk";
   --transition: all 0.3s linear;
   --box-shadow: 0px 2px steelblue;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -53,7 +63,9 @@ html {
 body {
   font-family: var(--ff-primary);
   color: var(--color-black);
-  /* background-image: url("../images/swirl.webp"); */
+  background-image: url("../images/white_wall_hash.webp");
+  background-size: cover;
+  background-repeat: repeat;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -112,6 +124,11 @@ p {
   color: var(--clr-grey-3);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 6.5rem;
@@ -139,4 +156,8 @@ p {
   h4 {
     line-height: 1.1;
   }
+}
+
+.flex-container {
+  display: flex;
 }

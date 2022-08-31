@@ -6,7 +6,8 @@ import SearchForm from "../components/SearchForm";
 import { useGlobalContext } from "../context/context";
 
 const HomePage = () => {
-  const { loading, pokemon, nextPageUrl, prevPageUrl } = useGlobalContext();
+  const { loading, pokemon, nextPageUrl, prevPageUrl, setCurrentPageUrl } =
+    useGlobalContext();
 
   const goToNextPage = () => {
     setCurrentPageUrl(nextPageUrl);
@@ -20,7 +21,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <SearchForm />
       <PokemonList pokemon={pokemon} />
       <Pagination
         goToNextPage={nextPageUrl ? goToNextPage : null}

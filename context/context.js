@@ -35,6 +35,7 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         loading,
+        setCurrentPageUrl,
         searchTerm,
         setSearchTerm,
         pokemon,

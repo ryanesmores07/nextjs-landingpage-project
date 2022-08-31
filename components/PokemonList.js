@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import classes from "./PokemonList.module.css";
-import Link from "Next/link";
 import { useGlobalContext } from "../context/context";
+import SinglePokemon from "../components/SinglePokemon";
 
 const PokemonList = ({ pokemon }) => {
   const { loading } = useGlobalContext();
@@ -13,15 +12,28 @@ const PokemonList = ({ pokemon }) => {
 
   return (
     <Wrapper>
-      {pokemon.map((p) => {
-        return <h1 key={p}>{p}</h1>;
-      })}
+      <div className="center flex-container">
+        {pokemon.map((p, index) => {
+          return (
+            <div key={p}>
+              <h3>{p}</h3>
+            </div>
+          );
+        })}
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  margin: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: pink; */
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default PokemonList;
