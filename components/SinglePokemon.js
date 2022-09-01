@@ -106,11 +106,11 @@ const Wrapper = styled.section`
       /* letter-spacing: 0.3 rem; */
       color: var(--clr-pokemon-1);
       -webkit-text-stroke: 2px var(--clr-pokemon-2);
-    }
 
-    &:hover {
-      transform: rotate(3deg);
-      transition: all 0.01s linear;
+      &:hover {
+        transform: rotate(3deg);
+        transition: all 0.01s linear;
+      }
     }
   }
 
