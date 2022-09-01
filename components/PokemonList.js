@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import SinglePokemon from "../components/SinglePokemon";
+import Link from "next/link";
 
 const PokemonList = ({ pokemon }) => {
   const { loading } = useGlobalContext();
@@ -12,12 +13,14 @@ const PokemonList = ({ pokemon }) => {
 
   return (
     <Wrapper>
-      <div className="center flex-container">
+      <div className="center grid-container">
         {pokemon.map((p, index) => {
           return (
-            <div key={p}>
-              <h3>{p}</h3>
-            </div>
+            <ul key={p}>
+              <Link href="/SearchPokemon">
+                <li>{p}</li>
+              </Link>
+            </ul>
           );
         })}
       </div>
@@ -26,13 +29,24 @@ const PokemonList = ({ pokemon }) => {
 };
 
 const Wrapper = styled.section`
-  width: 80%;
+  width: 100%;
+  padding: 5rem;
   margin: 0 auto;
   /* background-color: pink; */
 
-  .flex-container {
+  /* .flex-container {
     flex-direction: column;
     align-items: center;
+  } */
+
+  .grid-container {
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    max-width: 80%;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
   }
 `;
 

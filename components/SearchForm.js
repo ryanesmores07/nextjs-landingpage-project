@@ -34,13 +34,33 @@ const Wrapper = styled.div`
   margin: 0 auto;
 
   p {
-    margin-bottom: 0;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
 
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (min-width: 450px) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1170px) {
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
   }
 `;
 

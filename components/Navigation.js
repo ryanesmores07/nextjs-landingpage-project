@@ -7,18 +7,14 @@ const Navigation = () => {
     <Wrapper>
       <div className="flex-container">
         <ul>
-          <li>
-            <Link href="/">
-              <h3>Pokemon List</h3>
-            </Link>
-          </li>
+          <Link href="/">
+            <li>Pokemon List</li>
+          </Link>
         </ul>
         <ul>
-          <li>
-            <Link href="/1">
-              <h3>Search Pokemon</h3>
-            </Link>
-          </li>
+          <Link href="/SearchPokemon">
+            <li>Search Pokemon</li>
+          </Link>
         </ul>
       </div>
     </Wrapper>
@@ -29,14 +25,31 @@ const Wrapper = styled.nav`
   .flex-container {
     background-color: orangered;
     width: 100%;
-    height: 8vh;
+    /* height: 8vh; */
     padding: 1rem;
     margin: 0 auto;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: flex-end; */
 
-    h3 {
+    li {
       color: white;
+
+      &:hover {
+        color: var(--clr-pokemon-2);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    li {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1170px) {
+    li {
+      font-size: 2.3rem;
     }
   }
 `;
