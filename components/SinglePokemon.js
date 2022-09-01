@@ -134,7 +134,7 @@ const Wrapper = styled.section`
     }
 
     .image-container {
-      border: outset 0.5rem var(--clr-pokemon-2);
+      border: outset 1rem var(--clr-pokemon-2);
       border-radius: 10%;
       box-shadow: 3px 3px 3px 0.1px #888888;
 
