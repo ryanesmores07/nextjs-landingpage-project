@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import SinglePokemon from "../components/SinglePokemon";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const PokemonList = ({ pokemon }) => {
-  const { loading } = useGlobalContext();
+  const { searchTerm, setSearchTerm, loading } = useGlobalContext();
+  const router = useRouter();
 
   if (loading) {
     return "Loading...";
@@ -17,7 +19,7 @@ const PokemonList = ({ pokemon }) => {
         {pokemon.map((p, index) => {
           return (
             <ul key={p}>
-              <Link href="/SearchPokemon">
+              <Link href={`/find-pokemon/${p}`}>
                 <li>{p}</li>
               </Link>
             </ul>

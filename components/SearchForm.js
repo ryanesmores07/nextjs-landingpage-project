@@ -6,6 +6,10 @@ const SearchForm = () => {
   const { setSearchTerm } = useGlobalContext();
   const pokeInputRef = useRef("");
 
+  React.useEffect(() => {
+    pokeInputRef.current.focus();
+  }, []);
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -20,28 +24,42 @@ const SearchForm = () => {
 
   return (
     <Wrapper>
-      <div className="container">
-        <p>Enter Pokemon name or Pokedex number</p>
+      <div className="flex-container">
         <form action="input" onSubmit={submitHandler}>
-          <input type="text" ref={pokeInputRef} />
+          <div className="form-control flex-container">
+            <label htmlFor="name">Enter Pokemon name or Pokedex number</label>
+            <input type="text" id="name" ref={pokeInputRef} />
+          </div>
         </form>
       </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   margin: 0 auto;
+  padding-top: 5rem;
 
   p {
     font-weight: 400;
     margin-bottom: 0.5rem;
   }
 
-  .container {
-    display: flex;
+  .flex-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+
+    .form-control {
+      padding: 2rem 3rem;
+      border: 1px dotted #888888;
+      box-shadow: 1px 1px #888888;
+      label {
+        font-weight: 400;
+      }
+      &:hover {
+      }
+    }
   }
 
   @media (min-width: 450px) {
@@ -59,7 +77,6 @@ const Wrapper = styled.div`
   @media (min-width: 1170px) {
     p {
       font-size: 1.8rem;
-      margin-bottom: 0;
     }
   }
 `;

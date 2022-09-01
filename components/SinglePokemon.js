@@ -7,7 +7,7 @@ import styled from "styled-components";
 const singlePokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 const SinglePokemon = () => {
-  const { searchTerm, setSearchTerm } = useGlobalContext("5");
+  const { searchTerm, setSearchTerm } = useGlobalContext();
 
   const [singlePokemon, setSinglePokemon] = useState();
 
@@ -31,7 +31,6 @@ const SinglePokemon = () => {
   // console.log(singlePokemon);
   return (
     <Wrapper>
-      <SearchForm />
       <div className="title">
         <h1 className="name">{singlePokemon.name}</h1>
       </div>
@@ -73,7 +72,7 @@ const SinglePokemon = () => {
 const Wrapper = styled.section`
   /* background-color: pink; */
   max-width: 100%;
-  padding: 2rem;
+  padding: 0 2rem;
   margin: 0 auto;
 
   h2 {
@@ -111,6 +110,7 @@ const Wrapper = styled.section`
 
     &:hover {
       transform: rotate(3deg);
+      transition: all 0.01s linear;
     }
   }
 
@@ -137,17 +137,16 @@ const Wrapper = styled.section`
       border: outset 0.5rem var(--clr-pokemon-2);
       border-radius: 10%;
       box-shadow: 3px 3px 3px 0.1px #888888;
-      /* background-color: var(--clr-pokemon-1); */
 
       &:hover {
         box-shadow: 5px 7px 10px 1px #888888;
       }
       img {
-        transform: rotate(5deg);
+        transform: rotate(3deg);
 
         &:hover {
           transform: rotate(-3deg);
-          transition: all 0.05s linear;
+          transition: all 0.01s linear;
         }
       }
     }

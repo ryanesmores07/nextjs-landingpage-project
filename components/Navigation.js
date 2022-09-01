@@ -12,7 +12,7 @@ const Navigation = () => {
           </Link>
         </ul>
         <ul>
-          <Link href="/SearchPokemon">
+          <Link href="/find-pokemon">
             <li>Search Pokemon</li>
           </Link>
         </ul>
