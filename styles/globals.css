@@ -129,7 +129,7 @@ img {
   max-width: 100%;
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   h1 {
     font-size: 6.5rem;
   }
@@ -149,7 +149,7 @@ img {
   body {
     font-size: 2rem;
   }
-}
+} */
 
 .flex-container {
   display: flex;

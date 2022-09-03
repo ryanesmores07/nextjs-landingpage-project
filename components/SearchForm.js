@@ -51,7 +51,8 @@ const Wrapper = styled.section`
     gap: 1rem;
 
     .form-control {
-      padding: 2rem 3rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.8rem;
       border: 1px dotted #888888;
       box-shadow: 1px 1px #888888;
       label {
@@ -66,17 +67,33 @@ const Wrapper = styled.section`
     p {
       font-size: 1.2rem;
     }
+    .flex-container {
+      .form-control {
+        padding: 2rem 3rem;
+        font-size: 1rem;
+      }
+    }
   }
 
   @media (min-width: 768px) {
     p {
       font-size: 1.6rem;
     }
+    .flex-container {
+      .form-control {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   @media (min-width: 1170px) {
     p {
       font-size: 1.8rem;
+    }
+    .flex-container {
+      .form-control {
+        font-size: 2rem;
+      }
     }
   }
 `;

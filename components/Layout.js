@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 
 const Layout = (props) => {
@@ -7,6 +8,7 @@ const Layout = (props) => {
     <Wrapper>
       <Navigation />
       <main>{props.children}</main>
+      <Footer />
     </Wrapper>
   );
 };

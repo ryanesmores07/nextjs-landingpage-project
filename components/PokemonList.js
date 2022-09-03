@@ -42,19 +42,52 @@ const Wrapper = styled.section`
   .grid-container {
     margin: 0 auto;
     display: grid;
+
+    column-gap: 5rem;
     place-items: center;
-    max-width: 80%;
+    justify-content: space-evenly;
+    max-width: 90%;
     grid-auto-flow: column;
     grid-template-rows: repeat(10, 1fr);
-    /* grid-template-columns: repeat(2, 1fr); */
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: var(--ff-pokemon);
+
+    li {
+      font-size: 2.5rem;
+      color: var(--clr-pokemon-1);
+      -webkit-text-stroke: 1.5px var(--clr-pokemon-2);
+    }
 
     .link {
       cursor: pointer;
 
       &:hover {
         color: var(--clr-pokemon-2);
-        font-size: 1.8rem;
+        font-size: 2rem;
         transition: 0.01s all ease-in;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid-container {
+      li {
+        font-size: 3.5rem;
+        &:hover {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1170px) {
+    .grid-container {
+      li {
+        font-size: 4rem;
+        &:hover {
+          font-size: 3.5rem;
+        }
       }
     }
   }

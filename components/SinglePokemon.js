@@ -25,7 +25,7 @@ const SinglePokemon = ({ pokeName }) => {
     fetchPokemon();
   }, [searchTerm]);
 
-  if (!singlePokemon || !searchTerm) {
+  if (!singlePokemon) {
     return "Loading..";
   }
   // console.log(singlePokemon);
@@ -72,7 +72,8 @@ const SinglePokemon = ({ pokeName }) => {
 const Wrapper = styled.section`
   /* background-color: pink; */
   max-width: 100%;
-  padding: 0 2rem;
+  padding: 0 2rem 5rem;
+
   margin: 0 auto;
 
   h2 {
