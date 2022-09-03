@@ -25,7 +25,7 @@ const SinglePokemon = ({ pokeName }) => {
     fetchPokemon();
   }, [searchTerm]);
 
-  if (!singlePokemon) {
+  if (!singlePokemon || !searchTerm) {
     return "Loading..";
   }
   // console.log(singlePokemon);
