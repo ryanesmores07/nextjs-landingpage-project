@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context/context";
 import axios from "axios";
-import SearchForm from "./SearchForm";
+
 import styled from "styled-components";
 
 const singlePokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-const SinglePokemon = () => {
-  const { searchTerm, setSearchTerm } = useGlobalContext();
+const SinglePokemon = ({ pokeName }) => {
+  const { searchTerm } = useGlobalContext();
 
   const [singlePokemon, setSinglePokemon] = useState();
 

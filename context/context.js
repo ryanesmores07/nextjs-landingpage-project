@@ -8,7 +8,7 @@ const allPokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
 const AppProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("25");
+  const [searchTerm, setSearchTerm] = useState("1");
 
   const [currentPageUrl, setCurrentPageUrl] = useState(allPokemonUrl);
 

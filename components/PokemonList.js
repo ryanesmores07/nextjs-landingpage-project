@@ -1,13 +1,11 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
-import SinglePokemon from "../components/SinglePokemon";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const PokemonList = ({ pokemon }) => {
-  const { searchTerm, setSearchTerm, loading } = useGlobalContext();
-  const router = useRouter();
+  const { loading } = useGlobalContext();
 
   if (loading) {
     return "Loading...";
@@ -18,7 +16,7 @@ const PokemonList = ({ pokemon }) => {
       <div className="center grid-container">
         {pokemon.map((p, index) => {
           return (
-            <ul key={p}>
+            <ul key={p} className="link">
               <Link href={`/find-pokemon/${p}`}>
                 <li>{p}</li>
               </Link>
@@ -49,6 +47,16 @@ const Wrapper = styled.section`
     grid-auto-flow: column;
     grid-template-rows: repeat(10, 1fr);
     /* grid-template-columns: repeat(2, 1fr); */
+
+    .link {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--clr-pokemon-2);
+        font-size: 1.8rem;
+        transition: 0.01s all ease-in;
+      }
+    }
   }
 `;
 
