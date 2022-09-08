@@ -1,11 +1,12 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const PokemonList = ({ pokemon }) => {
   const { loading } = useGlobalContext();
+
+  console.log(pokemon);
 
   if (loading) {
     return "Loading...";

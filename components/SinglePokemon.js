@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context/context";
 import axios from "axios";
-
+import Link from "next/link";
 import styled from "styled-components";
 
 const singlePokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
@@ -61,9 +61,14 @@ const SinglePokemon = ({ pokeName }) => {
           <img
             className="logo"
             src={singlePokemon.sprites.front_default}
-            alt=""
+            alt="pokemon name"
           />
         </div>
+      </div>
+      <div className="return-button">
+        <button>
+          <Link href="/">Return</Link>
+        </button>
       </div>
     </Wrapper>
   );
@@ -94,6 +99,31 @@ const Wrapper = styled.section`
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
     text-transform: capitalize;
+  }
+
+  .return-button {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+
+    & > button {
+      padding: 0.3rem 0.8rem;
+      box-shadow: 2px 2px #888888;
+      font-size: 1rem;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--clr-pokemon-2);
+      }
+    }
+  }
+
+  button > * {
+    color: black;
+    &:hover {
+      color: white;
+    }
   }
 
   .title {
@@ -179,6 +209,12 @@ const Wrapper = styled.section`
     .title {
       .name {
         font-size: 9rem;
+      }
+    }
+
+    .return-button {
+      & > button {
+        font-size: 1.5rem;
       }
     }
 
